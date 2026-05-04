@@ -1025,7 +1025,6 @@ open class DeckPicker :
         }
         toolbarSearchView?.maxWidth = Integer.MAX_VALUE
 
-        menu.findItem(R.id.action_export_collection)?.title = TR.actionsExport()
         menu.findItem(R.id.action_check_database)?.title = TR.sentenceCase.checkDatabase
         menu.findItem(R.id.action_check_media)?.title = TR.sentenceCase.checkMediaAction
         setupMediaSyncMenuItem(menu)
@@ -1270,11 +1269,6 @@ open class DeckPicker :
                 }
                 return true
             }
-            R.id.action_export_collection -> {
-                Timber.i("DeckPicker:: Export menu item selected")
-                ExportDialogFragment.newInstance().show(supportFragmentManager, "exportDialog")
-                return true
-            }
             R.id.action_create_backup -> {
                 Timber.i("DeckPicker::Create backup")
                 createBackup()
@@ -1308,10 +1302,6 @@ open class DeckPicker :
 
     fun showCreateFilteredDeckDialog() {
         startActivity(FilteredDeckOptionsFragment.getIntent(this))
-    }
-
-    fun exportCollection() {
-        ExportDialogFragment.newInstance().show(supportFragmentManager, "exportDialog")
     }
 
     private fun processReviewResults(resultCode: Int) {
@@ -1550,14 +1540,6 @@ open class DeckPicker :
                 Timber.i("Check media from keypress")
                 showMediaCheckDialog()
                 return true
-            }
-            KeyEvent.KEYCODE_E -> {
-                if (event.isCtrlPressed) {
-                    // Shortcut: CTRL + E
-                    Timber.i("Show export dialog from keypress")
-                    exportCollection()
-                    return true
-                }
             }
             KeyEvent.KEYCODE_I -> {
                 if (event.isCtrlPressed && event.isShiftPressed) {
