@@ -107,7 +107,6 @@ class DeckPickerMenuContentProvider(
                 if (!isDynamic) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.CUSTOM_STUDY)
                 }
-                add(DeckPickerContextMenu.DeckPickerContextMenuOption.EXPORT_DECK)
                 if (hasBuriedInDeck) {
                     add(DeckPickerContextMenu.DeckPickerContextMenuOption.UNBURY)
                 }

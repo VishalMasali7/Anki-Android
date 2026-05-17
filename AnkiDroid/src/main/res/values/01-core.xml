@@ -127,7 +127,6 @@
     <string name="sync_cancelled" tools:ignore="UnusedResources">Sync cancelled</string>
     <string name="sync_cancel_message" tools:ignore="UnusedResources">Cancelling…\nThis may take some time.</string>
     <string name="syncing_media">Syncing media</string>
-    <string name="export_deck" maxLength="28">Export deck</string>
     <string name="export_collection">Export collection</string>
 
     <!-- Card template editor -->

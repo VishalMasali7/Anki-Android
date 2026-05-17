@@ -859,10 +859,6 @@ open class DeckPicker :
                 renameDeckDialog(deckId)
                 dismissAllDialogFragments()
             }
-            DeckPickerContextMenuOption.EXPORT_DECK -> {
-                Timber.i("ContextMenu: Export deck selected")
-                viewModel.exportDeck(deckId)
-            }
             DeckPickerContextMenuOption.UNBURY -> {
                 Timber.i("ContextMenu: Unbury deck selected")
                 viewModel.unburyDeck(deckId)
